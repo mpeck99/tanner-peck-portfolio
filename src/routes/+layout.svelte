@@ -1,7 +1,5 @@
 <script>
-    import { page } from '$app/stores';
-    import {writable} from 'svelte/store';
-    import Navigation from "../components/navigation.svelte";
+  import Navigation from "../components/navigation.svelte";
 </script>
 
 <svelte:head>
