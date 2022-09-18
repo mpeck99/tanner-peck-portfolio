@@ -84,6 +84,10 @@
 
     display: flex;
     align-items: center;
+
+    :global(.inner){
+      padding-right: 2rem;
+    }
   }
 
   header {
