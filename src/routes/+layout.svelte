@@ -54,13 +54,14 @@
   }
 
   header {
+    
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto 1fr;
     justify-items: center;
     align-items: flex-start;
 
-    padding: 1rem;
+    padding: 0rem;
     
     grid-row: 1 / 2;
     grid-column: 1 / 2;
