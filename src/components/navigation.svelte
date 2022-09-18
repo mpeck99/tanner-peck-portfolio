@@ -40,7 +40,7 @@
 		/>
 	</svg>
 </a>
-<nav aria-label="Primary" class="site-nav">
+<nav aria-label="Primary" class="site-nav {menu.open === true ? 'js-menu-open' : ''}">
 	<button
 		data-aria-title="hamburger-menu"
 		data-aria-id="site-nav-status"
@@ -59,25 +59,25 @@
 		<li>
 			<a href="#home" class={pageHref === '#home' ? 'active' : ' '}>
 				<span class="material-icons">home</span>
-				<!-- Home -->
+				<span class="site-nav__text">Home</span>
 			</a>
 		</li>
 		<li>
 			<a href="#about" class={pageHref === '#about' ? 'active' : ' '}>
 				<span class="material-icons"> info </span>
-				<!-- About -->
+				<span class="site-nav__text">About</span>
 			</a>
 		</li>
 		<li>
 			<a href="#portfolio" class={pageHref === '#portfolio' ? 'active' : ' '}>
 				<span class="material-icons"> work </span>
-				<!-- Work -->
+				<span class="site-nav__text">Work</span>
 			</a>
 		</li>
 		<li>
 			<a href="#contact" class={pageHref === '#contact' ? 'active' : ' '}>
 				<span class="material-icons"> mail </span>
-				<!-- Contact -->
+				<span class="site-nav__text">Contact</span>
 			</a>
 		</li>
 	</ul>
@@ -97,11 +97,14 @@
 		height: 100%;
 
 		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		grid-row: 2 / 3;
 
 		ul {
-			width: 100%;
+			height: 100%;
+			width: 8rem;
 
 			display: none;
 
@@ -110,9 +113,18 @@
 			list-style-type: none;
 
 			li {
+				width: 100%;
+				height: 6rem;
+
 				display: flex;
 				justify-content: center;
 				align-items: center;
+
+			
+
+				&:hover, &:focus {
+					
+				}
 			}
 
 			a {
@@ -131,7 +143,25 @@
 				text-align: center;
 				font-size: 1rem;
 
-				transition: all 0.5s ease-in-out;
+	
+
+				.site-nav__text {
+					display: block;
+					
+					position: static;
+
+					opacity: 0;
+
+					@include desktop {
+						padding: 0.5rem;
+
+						position: absolute;
+						top: -2rem;
+
+						background: var(--clr-goldD);
+						color: var(--clr-greyD);
+					}
+				}
 
 				&::before {
 					width: 100%;
@@ -143,7 +173,6 @@
 					left: 0;
 
 					border: 0.1rem solid var(--clr-goldD);
-					transform: scale(1.2, 1.2);
 					transition: all 0.3s ease-in-out;
 
 					box-shadow: 0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
@@ -193,6 +222,33 @@
 						color: var(--clr-black);
 						transition: all 0.5s ease-in-out;
 					}
+
+					.site-nav__text {
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+
+						opacity: 1;
+
+						animation: moveup 0.25s ease-in-out;
+
+						top: -3.25rem;
+
+						&::after {
+							content: '';
+							width: 0;
+							height: 0;
+
+							position: absolute;
+							bottom: -0.75rem;
+							
+
+							border-left: 0.5rem solid transparent;
+							border-right: 0.5rem solid transparent;
+							border-top: 0.75rem solid var(--clr-goldD);
+						}
+					}
 				}
 
 				&.active {
@@ -202,19 +258,25 @@
 					}
 				}
 			}
-
+			
 			@include desktop {
 				display: flex;
 				flex-direction: column;
 				justify-content: space-around;
 			}
 		}
+
+		&.js-menu-open {
+				flex-direction: column;
+			}
 	}
 
 	.hamburger-menu {
 		height: 100%;
 		width: 4rem;
 		display: block;
+
+		position: relative;
 
 		border: none;
 		background: transparent;
@@ -224,6 +286,8 @@
 		.menu-bars {
 			display: flex;
 			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 
 			pointer-events: none;
 		}
@@ -246,29 +310,61 @@
 			color: var(--clr-goldD);
 		}
 
-		&:hover,
-		&:focus {
-			.menu-bar {
-				&:nth-child(1) {
-					transform: translate(-0.5rem);
-					transition: transform 0.25s ease-in-out;
-					transform-origin: center;
-				}
-				&:nth-child(3) {
-					transform: translate(0.5rem);
-					transition: transform 0.25s ease-in-out;
-					transform-origin: center;
-				}
-			}
-		}
-
 		@include desktop {
 			display: none;
 		}
 
 		&.js-menu-open{
+			width: 8rem;
+			height: 8rem;
+
+			flex-direction: column;
+			position: fixed;
+			right: 0;
+
+			background-color: var(--clr-gold);
+
+			.menu-bar {
+				background-color: var(--clr-greyD);
+			}
+
+			.menu-text {
+				color: var(--clr-greyD);
+			}
+
 			+ .site-nav__menu {
-				display: block;
+				width: 8rem;
+				max-height: 20rem;
+
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+
+				position: fixed;
+				right: 0;
+				top: 5.6rem;
+
+				background-color: var(--clr-gold);
+
+				a {
+					color: var(--clr-greyD);
+
+					.material-icons {
+						color: var(--clr-greyD);
+					}
+
+					&::before {
+						border: none;
+						box-shadow: none;
+						transform: none;
+					}
+
+					&:hover, &:focus {
+						&::after {
+							display: none;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -306,6 +402,20 @@
 
 				margin-top: 2rem;
 			}
+		}
+	}
+
+
+	@keyframes moveup {
+		0% {
+			top: -2rem;
+
+			opacity: 0;
+		}
+		100% {
+			top: -3.25rem;
+
+			opacity: 1;
 		}
 	}
 </style>
