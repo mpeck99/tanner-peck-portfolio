@@ -1,4 +1,5 @@
-<div class="inner">
+<div id="particle-div"></div>
+<div class="inner" id="home">
   <h1>Tanner Peck</h1>
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a nostrum nulla id maxime, possimus, reprehenderit odit qui dolore praesentium ullam ad necessitatibus eius. Ea rem enim nobis cumque voluptates.</p>
 </div>
