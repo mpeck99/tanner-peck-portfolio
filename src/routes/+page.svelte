@@ -1,4 +1,3 @@
-
 <div id="particle-div" />
 <section id="home" aria-labelledby="home-heading">
 	<div class="inner">
@@ -14,33 +13,35 @@
 	<p />
 </section>
 <section id="about" aria-labelledby="about-heading">
+	<h2 id="about-heading">About</h2>
 	<div class="inner">
-		<h2 id="about-heading">About</h2>
 		<div class="headshot">
-			<img src="./user-placeholder.webp" alt="Tanner Peck" />
+			<img src="./images/user-placeholder.webp" alt="Tanner Peck" />
 		</div>
-		<p>
-			I have a 10 year old son. He has words. He is so good with these words it's unbelievable. We
-			are going to make placeholder text great again. Greater than ever before. The best taco bowls
-			are made in Trump Tower Grill. I love Hispanics! Lorem Ipsum is the single greatest threat. We
-			are not - we are not keeping up with other websites.
-		</p>
-		<p>
-			I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it
-			was. It could be Russia, but it could also be China. It could also be lots of other people. It
-			also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? I don't think
-			anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could
-			be Russia, but it could also be China. It could also be lots of other people. It also could be
-			some wordsmith sitting on their bed that weights 400 pounds. Ok? We have so many things that
-			we have to do better... and certainly ipsum is one of them. Some people have an ability to
-			write placeholder text... It's an art you're basically born with. You either have it or you
-			don't.
-		</p>
+		<div class="content">
+			<p>
+				I have a 10 year old son. He has words. He is so good with these words it's unbelievable. We
+				are going to make placeholder text great again. Greater than ever before. The best taco bowls
+				are made in Trump Tower Grill. I love Hispanics! Lorem Ipsum is the single greatest threat. We
+				are not - we are not keeping up with other websites.
+			</p>
+			<p>
+				I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it
+				was. It could be Russia, but it could also be China. It could also be lots of other people. It
+				also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? I don't think
+				anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could
+				be Russia, but it could also be China. It could also be lots of other people. It also could be
+				some wordsmith sitting on their bed that weights 400 pounds. Ok? We have so many things that
+				we have to do better... and certainly ipsum is one of them. Some people have an ability to
+				write placeholder text... It's an art you're basically born with. You either have it or you
+				don't.
+			</p>
+		</div>
 	</div>
 </section>
 <section id="portfolio" aria-labelledby="portfolio-heading">
+	<h2 id="portfolio-heading">Portfolio</h2>
 	<div class="inner">
-		<h2 id="portfolio-heading">Portfolio</h2>
 		<p>
 			I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it
 			was. It could be Russia, but it could also be China. It could also be lots of other people. It
@@ -69,8 +70,8 @@
 	</div>
 </section>
 <section id="contact" aria-labelledby="contact-heading">
+	<h2 id="contact-heading">Contact</h2>
 	<div class="inner">
-		<h2 id="contact-heading">Contact</h2>
 		<p>
 			I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it
 			was. It could be Russia, but it could also be China. It could also be lots of other people. It
@@ -100,9 +101,9 @@
 </section>
 
 <style lang="scss">
-	#home {
-		height: 100vh;
+	@import '../static/css/mixins.scss';
 
+	#home {
 		padding: 0 8rem;
 
 		display: flex;
@@ -113,12 +114,11 @@
 		text-align: center;
 
 		h1 {
-      margin-bottom: 0%;
-      
-      color: var(--clr-goldD);
+			margin-bottom: 0%;
+
+			color: var(--clr-goldD);
 			font-size: clamp(5.625rem, 4.773rem + 3.64vw, 10rem);
 			font-weight: 300;
-			
 
 			text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05),
 				-10px 20px 5px rgba(0, 0, 0, 0.05);
@@ -135,8 +135,23 @@
 
 	#about {
 		.inner {
-			h2 {
-				display: block;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+
+			.content {
+				order: 2;
+
+				@include desktop {
+					order: 1;
+				}
+			}
+
+			@include desktop {
+				flex-direction: row;
+				flex-wrap: nowrap;
 			}
 		}
 
@@ -145,13 +160,17 @@
 
 			position: relative;
 
-			float: right;
+			order: 1;
 
 			img {
-				max-width: 30rem;
+				max-width: 20rem;
 				height: auto;
 
 				clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
+				@include desktop {
+					max-width: 30rem;
+				}
 			}
 
 			&::after {
@@ -161,8 +180,8 @@
 				height: 0.25rem;
 
 				position: absolute;
-				left: -3rem;
-				top: 6rem;
+				left: -10%;
+				top: 20%;
 
 				background: var(--clr-gold);
 				transform: rotate(-45deg);
@@ -177,8 +196,8 @@
 				height: 0.25rem;
 
 				position: absolute;
-				right: -3rem;
-				bottom: 6.5rem;
+				right: -10%;
+				bottom: 20%;
 
 				background: var(--clr-gold);
 				transform: rotate(-45deg);
@@ -189,6 +208,10 @@
 			&:hover,
 			&:focus {
 				transform: rotate(-2deg);
+			}
+
+			@include desktop {
+				order: 2;
 			}
 		}
 	}
