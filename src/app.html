@@ -4,9 +4,13 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/tanner-peck-logo.svg" />
 		<meta name="viewport" content="width=device-width" />
+		<script src="%sveltekit.assets%/particles.js"></script>
 		%sveltekit.head%
 	</head>
 	<body>
 		%sveltekit.body%
 	</body>
+	<script>
+		particlesJS.load('particle-div', '%sveltekit.assets%/particles-cfg.json')
+	</script>
 </html>
