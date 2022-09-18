@@ -1,8 +1,27 @@
 <div id="particle-div"></div>
-<div class="inner" id="home">
-  <h1>Tanner Peck</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a nostrum nulla id maxime, possimus, reprehenderit odit qui dolore praesentium ullam ad necessitatibus eius. Ea rem enim nobis cumque voluptates.</p>
-</div>
+<section id="home" aria-labelledby="home-heading">
+  <h1 id="home-heading">Tanner Peck</h1>
+  <p>Lorem Ipsum is FAKE TEXT! I will write some great placeholder text – and nobody writes better placeholder text than me, believe me – and I’ll write it very inexpensively. I will write some great, great text on your website’s Southern border, and I will make Google pay for that text. Mark my words. Lorem Ipsum's father was with Lee Harvey Oswald prior to Oswald's being, you know, shot..</p>
+  <p></p>
+</section>
+<section id="about" aria-labelledby="about-heading">
+  <h2 id="about-heading">About</h2>
+  <p>I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could be Russia, but it could also be China. It could also be lots of other people. It also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? I’m the best thing that ever happened to placeholder text. Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision.</p>
+  <p>I have a 10 year old son. He has words. He is so good with these words it's unbelievable. We are going to make placeholder text great again. Greater than ever before. The best taco bowls are made in Trump Tower Grill. I love Hispanics! Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites.</p>
+  <p>I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could be Russia, but it could also be China. It could also be lots of other people. It also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could be Russia, but it could also be China. It could also be lots of other people. It also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? We have so many things that we have to do better... and certainly ipsum is one of them. Some people have an ability to write placeholder text... It's an art you're basically born with. You either have it or you don't.</p>
+</section>
+<section id="portfolio" aria-labelledby="portfolio-heading">
+  <h2 id="portfolio-heading">Portfolio</h2>
+  <p>I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could be Russia, but it could also be China. It could also be lots of other people. It also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? I’m the best thing that ever happened to placeholder text. Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision.</p>
+  <p>I have a 10 year old son. He has words. He is so good with these words it's unbelievable. We are going to make placeholder text great again. Greater than ever before. The best taco bowls are made in Trump Tower Grill. I love Hispanics! Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites.</p>
+  <p>I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could be Russia, but it could also be China. It could also be lots of other people. It also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could be Russia, but it could also be China. It could also be lots of other people. It also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? We have so many things that we have to do better... and certainly ipsum is one of them. Some people have an ability to write placeholder text... It's an art you're basically born with. You either have it or you don't.</p>
+</section>
+<section id="contact" aria-labelledby="contact-heading">
+  <h2 id="contact-heading">Contact</h2>
+  <p>I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could be Russia, but it could also be China. It could also be lots of other people. It also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? I’m the best thing that ever happened to placeholder text. Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision.</p>
+  <p>I have a 10 year old son. He has words. He is so good with these words it's unbelievable. We are going to make placeholder text great again. Greater than ever before. The best taco bowls are made in Trump Tower Grill. I love Hispanics! Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites.</p>
+  <p>I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could be Russia, but it could also be China. It could also be lots of other people. It also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could be Russia, but it could also be China. It could also be lots of other people. It also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? We have so many things that we have to do better... and certainly ipsum is one of them. Some people have an ability to write placeholder text... It's an art you're basically born with. You either have it or you don't.</p>
+</section>
 
 <style lang="scss">
   #home {
