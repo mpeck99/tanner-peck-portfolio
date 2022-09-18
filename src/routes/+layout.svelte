@@ -4,7 +4,9 @@
 
 <svelte:head>
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet");
+    @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+    @import url("https://fonts.googleapis.com/icon?family=Material+Icons"
+    );
   </style>
 </svelte:head>
 
@@ -18,7 +20,6 @@
 
 <style lang="scss">
   :global(:root){
-   
     --ff-head: 'Ubuntu Mono', monospace;
     --ff-body: 'Courier New', Courier, monospace;
    
@@ -28,6 +29,8 @@
     --clr-goldD: hsl(46, 98%, 32%);
     --clr-gold: hsl(45, 98%, 40%);
     --clr-white: hsl(0, 33%, 99%);
+
+    --shadow-color: 0deg 0% 0%;
   }
   :global(body) {
     min-height: 100vh;
@@ -37,6 +40,8 @@
     grid-template-rows: 100%;
 
     margin: 0;
+
+    position: relative;
 
     font-family: var(--ff-body);
     font-size: 22px;
@@ -53,10 +58,14 @@
     font-family: var(--ff-head);
   }
 
+  :global(section){
+    height: 100vh;
+  }
+
   header {
-    
+    height: 100vh;
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: 10rem 1fr;
     grid-template-rows: auto 1fr;
     justify-items: center;
     align-items: flex-start;
@@ -66,15 +75,18 @@
     grid-row: 1 / 2;
     grid-column: 1 / 2;
 
-    background: var(--clr-greyD);
+    position: fixed;
+    top: 0;
+
+    background: transparent;
 
     z-index: 1;
   }
 
   main {
+    padding: 0 3rem;
+
     grid-row: 1 / 2;
     grid-column: 2 / 3;
   }
-
-	
 </style>
