@@ -1,10 +1,17 @@
+<script>
+  import { page } from '$app/stores';
+  import {writable} from 'svelte/store';
+  let pageUrl = $page.url.href.split('/');
+  let pageHref = pageUrl[pageUrl.length - 1];
+</script>
+
 <img src="./tanner-peck-logo.svg" alt="Tanner Peck" class="logo">
 <nav aria-label="Primary" class="site-nav">
   <ul>
-    <li>Home</li>
-    <li>About</li>
-    <li>Portfolio</li>
-    <li>Contact</li>
+    <li class={pageHref === '#home' ? 'active': ' '}><a href="#home">Home</a></li> 
+    <li class={pageHref === '#about' ? 'active': ' '}><a href="#about">About</a></li>
+    <li class={pageHref === '#portfolio' ? 'active': ' '}><a href="#portfolio">Portfolio</a></li>
+    <li class={pageHref === '#contact' ? 'active': ' '}><a href="#contact">Contact</a></li> 
   </ul>
 </nav>
 
