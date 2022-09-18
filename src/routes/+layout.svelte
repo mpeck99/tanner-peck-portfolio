@@ -60,6 +60,9 @@
 
   :global(section){
     height: 100vh;
+
+    display: flex;
+    align-items: center;
   }
 
   header {
