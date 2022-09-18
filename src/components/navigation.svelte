@@ -160,6 +160,9 @@
 
 						background: var(--clr-goldD);
 						color: var(--clr-greyD);
+
+						box-shadow: 0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
+						7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
 					}
 				}
 
