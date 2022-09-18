@@ -3,6 +3,12 @@
 	import { writable } from 'svelte/store';
 	let pageUrl = $page.url.href.split('/');
 	let pageHref = pageUrl[pageUrl.length - 1];
+
+	let menu = { open: false };
+
+	function toggleMenu() {
+		menu.open = !menu.open;
+	}
 </script>
 
 <a href="/" class="logo">
@@ -35,7 +41,21 @@
 	</svg>
 </a>
 <nav aria-label="Primary" class="site-nav">
-	<ul>
+	<button
+		data-aria-title="hamburger-menu"
+		data-aria-id="site-nav-status"
+		aria-expanded="false"
+		class="hamburger-menu {menu.open === true ? 'js-menu-open' : ''}"
+		on:click={toggleMenu}
+	>
+		<span class="menu-bars">
+			<span class="menu-bar" />
+			<span class="menu-bar" />
+			<span class="menu-bar" />
+		</span>
+		<span class="menu-text"> Menu </span>
+	</button>
+	<ul class="site-nav__menu">
 		<li>
 			<a href="#home" class={pageHref === '#home' ? 'active' : ' '}>
 				<span class="material-icons">home</span>
@@ -64,6 +84,8 @@
 </nav>
 
 <style lang="scss">
+	@import '../static/css/mixins.scss';
+
 	.material-icons {
 		font-size: 1.5rem;
 		color: var(--clr-goldD);
@@ -73,18 +95,15 @@
 
 	.site-nav {
 		height: 100%;
-		width: 100%;
+
 		display: flex;
-		flex: 1;
 
 		grid-row: 2 / 3;
 
 		ul {
 			width: 100%;
 
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;
+			display: none;
 
 			padding-left: 0;
 
@@ -112,9 +131,7 @@
 				text-align: center;
 				font-size: 1rem;
 
-				transition: all 0.5s ease-in-out; 
-
-				
+				transition: all 0.5s ease-in-out;
 
 				&::before {
 					width: 100%;
@@ -125,12 +142,12 @@
 					top: 0;
 					left: 0;
 
-          border: 0.1rem solid var(--clr-goldD);
+					border: 0.1rem solid var(--clr-goldD);
 					transform: scale(1.2, 1.2);
-					transition: all 0.3s ease-in-out; 
+					transition: all 0.3s ease-in-out;
 
-          box-shadow: 0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
-					7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
+					box-shadow: 0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
+						7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
 
 					z-index: -1;
 				}
@@ -149,10 +166,10 @@
 
 					opacity: 0;
 
-          background-color: var(--clr-goldD);
-          box-shadow: 0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
-					7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
-					
+					background-color: var(--clr-goldD);
+					box-shadow: 0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
+						7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
+
 					transform: rotate(45deg);
 
 					z-index: -1;
@@ -163,58 +180,131 @@
 					&::after {
 						opacity: 1;
 						transform: scale(1, 1);
-            transition: all 0.25s ease-in-out;
+						transition: all 0.25s ease-in-out;
 					}
 
 					&::before {
 						opacity: 0;
 						transform: scale(0.75, 0.75);
-            transition: all 0.25s ease-in-out;
+						transition: all 0.25s ease-in-out;
 					}
 
 					.material-icons {
 						color: var(--clr-black);
-						transition: all 0.5s ease-in-out;  
+						transition: all 0.5s ease-in-out;
 					}
 				}
 
 				&.active {
 					&::before {
-						transform: rotate(45deg) ;
-            transition: all 0.25s ease-in-out;
+						transform: rotate(45deg);
+						transition: all 0.25s ease-in-out;
 					}
 				}
+			}
+
+			@include desktop {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+			}
+		}
+	}
+
+	.hamburger-menu {
+		height: 100%;
+		width: 4rem;
+		display: block;
+
+		border: none;
+		background: transparent;
+
+		cursor: pointer;
+
+		.menu-bars {
+			display: flex;
+			flex-direction: column;
+
+			pointer-events: none;
+		}
+
+		.menu-bar {
+			height: 0.15rem;
+			width: 3rem;
+
+			margin: 0.6rem 0 0 0;
+
+			background: var(--clr-goldD);
+
+			&:last-child {
+				margin-bottom: 1rem;
+			}
+		}
+
+		.menu-text {
+			font-size: 1rem;
+			color: var(--clr-goldD);
+		}
+
+		&:hover,
+		&:focus {
+			.menu-bar {
+				&:nth-child(1) {
+					transform: translate(-0.5rem);
+					transition: transform 0.25s ease-in-out;
+					transform-origin: center;
+				}
+				&:nth-child(3) {
+					transform: translate(0.5rem);
+					transition: transform 0.25s ease-in-out;
+					transform-origin: center;
+				}
+			}
+		}
+
+		@include desktop {
+			display: none;
+		}
+
+		&.js-menu-open{
+			+ .site-nav__menu {
+				display: block;
 			}
 		}
 	}
 
 	.logo {
 		text-align: center;
-		
-    svg {
-			width: 75%;
+
+		svg {
+			width: 5rem;
 
 			grid-row: 1 / 2;
 
-			margin-top: 2rem;
+			margin-top: 0;
 
 			&:hover,
 			&:focus {
-        
 				.path-1 {
 					transform: translateY(1rem);
-          transition: all 0.75s ease-in-out;
+					transition: all 0.75s ease-in-out;
 				}
 				.path-2 {
 					transform: translateY(-1rem);
-          transition: all 0.75s ease-in-out;
+					transition: all 0.75s ease-in-out;
 				}
 
 				#TP {
 					transform: scale(0.75);
-          transition: all 0.25s ease-in-out;
+					transition: all 0.25s ease-in-out;
 					transform-origin: center;
 				}
+			}
+
+			@include desktop {
+				width: 75%;
+
+				margin-top: 2rem;
 			}
 		}
 	}
