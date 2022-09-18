@@ -1,5 +1,4 @@
 <script>
-	import { npm_config_engine_strict } from './../../.svelte-kit/ambient.d.ts';
 	import { page } from '$app/stores';
 	import { writable } from 'svelte/store';
 	let pageUrl = $page.url.href.split('/');
@@ -37,14 +36,41 @@
 </a>
 <nav aria-label="Primary" class="site-nav">
 	<ul>
-		<li class={pageHref === '#home' ? 'active' : ' '}><a href="#home">Home</a></li>
-		<li class={pageHref === '#about' ? 'active' : ' '}><a href="#about">About</a></li>
-		<li class={pageHref === '#portfolio' ? 'active' : ' '}><a href="#portfolio">Portfolio</a></li>
-		<li class={pageHref === '#contact' ? 'active' : ' '}><a href="#contact">Contact</a></li>
+		<li>
+			<a href="#home" class={pageHref === '#home' ? 'active' : ' '}>
+				<span class="material-icons">home</span>
+				<!-- Home -->
+			</a>
+		</li>
+		<li>
+			<a href="#about" class={pageHref === '#about' ? 'active' : ' '}>
+				<span class="material-icons"> info </span>
+				<!-- About -->
+			</a>
+		</li>
+		<li>
+			<a href="#portfolio" class={pageHref === '#portfolio' ? 'active' : ' '}>
+				<span class="material-icons"> work </span>
+				<!-- Work -->
+			</a>
+		</li>
+		<li>
+			<a href="#contact" class={pageHref === '#contact' ? 'active' : ' '}>
+				<span class="material-icons"> mail </span>
+				<!-- Contact -->
+			</a>
+		</li>
 	</ul>
 </nav>
 
 <style lang="scss">
+	.material-icons {
+		font-size: 1.5rem;
+		color: var(--clr-goldD);
+
+		z-index: 2;
+	}
+
 	.site-nav {
 		height: 100%;
 		width: 100%;
@@ -54,13 +80,13 @@
 		grid-row: 2 / 3;
 
 		ul {
+			width: 100%;
+
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
-			flex: 1;
 
 			padding-left: 0;
-			margin: 5rem 0 0;
 
 			list-style-type: none;
 
@@ -68,28 +94,104 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-
-				flex: 1;
-
-				margin-left: -2.5rem;
-				margin-right: -2.5rem;
 			}
 
 			a {
-				height: 100%;
-				flex: 1;
+				width: 4rem;
+				height: 4rem;
+
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				position: relative;
 
 				text-decoration: none;
 				color: var(--clr-white);
-
 				text-align: center;
+				font-size: 1rem;
+
+				transition: all 0.5s;
+
+				
+
+				&::before {
+					width: 100%;
+					height: 100%;
+
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+
+          border: 0.1rem solid var(--clr-goldD);
+					transform: scale(1.2, 1.2);
+					transition: all 0.3s;
+
+          box-shadow: 0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
+					7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
+
+					z-index: -1;
+				}
+
+				&::after {
+					content: '';
+
+					width: 100%;
+					height: 100%;
+
+					position: absolute;
+					left: 0;
+					top: 0;
+					right: 0;
+					bottom: 0;
+
+					opacity: 0;
+
+          background-color: var(--clr-goldD);
+          box-shadow: 0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
+					7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
+					
+					transform: rotate(45deg);
+
+					z-index: -1;
+				}
+
+				&:hover,
+				&:focus {
+					&::after {
+						opacity: 1;
+						transform: scale(1, 1);
+            transition: all 0.25s;
+					}
+
+					&::before {
+						opacity: 0;
+						transform: scale(0.75, 0.75);
+            transition: all 0.25s;
+					}
+
+					.material-icons {
+						color: var(--clr-black);
+						transition: all 0.5s;
+					}
+				}
+
+				&.active {
+					&::before {
+						transform: rotate(45deg) ;
+            transition: all 0.25s;
+					}
+				}
 			}
 		}
 	}
 
 	.logo {
-    text-align: center;
-		svg {
+		text-align: center;
+		
+    svg {
 			width: 75%;
 
 			grid-row: 1 / 2;
@@ -98,15 +200,19 @@
 
 			&:hover,
 			&:focus {
+        
 				.path-1 {
 					transform: translateY(1rem);
+          transition: all 0.75s;
 				}
 				.path-2 {
 					transform: translateY(-1rem);
+          transition: all 0.75s;
 				}
 
 				#TP {
 					transform: scale(0.75);
+          transition: all 0.25s;
 					transform-origin: center;
 				}
 			}
