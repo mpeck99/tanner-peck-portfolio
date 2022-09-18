@@ -4,7 +4,7 @@
 
 <svelte:head>
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet");
   </style>
 </svelte:head>
 
@@ -19,8 +19,8 @@
 <style lang="scss">
   :global(:root){
    
-    --ff-head: 'Josefin Sans', sans-serif;
-    --ff-body: 'Open Sans', sans-serif;
+    --ff-head: 'Ubuntu Mono', monospace;
+    --ff-body: 'Courier New', Courier, monospace;
    
     --clr-black: hsl(345, 6%, 13%);
     --clr-greyD: hsl(330, 2%, 18%);
@@ -43,6 +43,10 @@
 
     background: var(--clr-black);
     color: var(--clr-white);
+
+    :global(p) {
+      line-height: 2;
+    }
   }
 
   :global(h1, h2, h3, h4, h5, h6){
@@ -62,6 +66,8 @@
     grid-column: 1 / 2;
 
     background: var(--clr-greyD);
+
+    z-index: 1;
   }
 
   main {
