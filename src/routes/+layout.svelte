@@ -97,9 +97,9 @@
 		flex-direction: column;
 		align-items: center;
 
-    &:first-child {
-      margin-top: 0;
-    }
+		&:first-child {
+			margin-top: 0;
+		}
 
 		.inner {
 			padding-right: 2rem;
@@ -107,39 +107,39 @@
 	}
 
 	header {
-    width: calc(100% - 4rem);
+		width: calc(100% - 4rem);
 		height: 6rem;
 
-    display: flex;
-    grid-row: 1 / 2;
+		display: flex;
+		grid-row: 1 / 2;
 		grid-column: 1 / 2;
 		padding: 0rem;
-    justify-content: space-between;
+		justify-content: space-between;
 
 		position: fixed;
 		top: 0;
 
-    padding: 1rem 2rem 0 2rem;
+		padding: 1rem 2rem 0 2rem;
 
-    background: var(--clr-greyD);
+		background: var(--clr-greyD);
 
 		z-index: 1;
 
-    box-shadow: 0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
-						7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
+		box-shadow: 0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
+			7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
 
 		@include desktop {
-      height: 100vh;
+			height: 100vh;
 
 			display: grid;
 			grid-template-columns: 10rem 1fr;
 			grid-template-rows: auto 1fr;
 			justify-items: center;
 			align-items: flex-start;
-      
-      background: transparent;
 
-      box-shadow: none;
+			background: transparent;
+
+			box-shadow: none;
 		}
 	}
 
@@ -149,10 +149,9 @@
 		grid-row: 2/3;
 		grid-column: 1/2;
 
-    @include desktop {
-      grid-row: 1 / 2;
-		  grid-column: 2 / 3;
-    }
-
+		@include desktop {
+			grid-row: 1 / 2;
+			grid-column: 2 / 3;
+		}
 	}
 </style>
