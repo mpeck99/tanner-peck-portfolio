@@ -1,4 +1,5 @@
 <script>
+	import { npm_config_engine_strict } from './../../.svelte-kit/ambient.d.ts';
   import { page } from '$app/stores';
   import {writable} from 'svelte/store';
   let pageUrl = $page.url.href.split('/');
@@ -18,6 +19,7 @@
 <style lang="scss">
   .site-nav {
     height: 100%;
+    width: 100%;
     display: flex;
     flex: 1;
 
@@ -30,8 +32,30 @@
       flex: 1;
 
       padding-left: 0;
+      margin: 5rem 0 0;
 
       list-style-type: none;
+
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        flex: 1;
+
+        margin-left:  -2.5rem;
+        margin-right: -2.5rem;
+      }
+
+      a {
+        height: 100%;
+        flex: 1;
+
+        text-decoration: none;
+        color: var(--clr-white);
+
+        text-align: center;
+      }
     }
   }
 
@@ -39,5 +63,7 @@
     width: 75%;
 
     grid-row: 1 / 2;
+
+    margin-top: 2rem;
   }
 </style>
