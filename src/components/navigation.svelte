@@ -112,7 +112,7 @@
 				text-align: center;
 				font-size: 1rem;
 
-				transition: all 0.5s;
+				transition: all 0.5s ease-in-out; 
 
 				
 
@@ -127,7 +127,7 @@
 
           border: 0.1rem solid var(--clr-goldD);
 					transform: scale(1.2, 1.2);
-					transition: all 0.3s;
+					transition: all 0.3s ease-in-out; 
 
           box-shadow: 0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
 					7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
@@ -163,25 +163,25 @@
 					&::after {
 						opacity: 1;
 						transform: scale(1, 1);
-            transition: all 0.25s;
+            transition: all 0.25s ease-in-out;
 					}
 
 					&::before {
 						opacity: 0;
 						transform: scale(0.75, 0.75);
-            transition: all 0.25s;
+            transition: all 0.25s ease-in-out;
 					}
 
 					.material-icons {
 						color: var(--clr-black);
-						transition: all 0.5s;
+						transition: all 0.5s ease-in-out;  
 					}
 				}
 
 				&.active {
 					&::before {
 						transform: rotate(45deg) ;
-            transition: all 0.25s;
+            transition: all 0.25s ease-in-out;
 					}
 				}
 			}
@@ -203,16 +203,16 @@
         
 				.path-1 {
 					transform: translateY(1rem);
-          transition: all 0.75s;
+          transition: all 0.75s ease-in-out;
 				}
 				.path-2 {
 					transform: translateY(-1rem);
-          transition: all 0.75s;
+          transition: all 0.75s ease-in-out;
 				}
 
 				#TP {
 					transform: scale(0.75);
-          transition: all 0.25s;
+          transition: all 0.25s ease-in-out;
 					transform-origin: center;
 				}
 			}
