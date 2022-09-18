@@ -59,6 +59,26 @@
     color: var(--clr-gold);
   }
 
+  :global(h2){
+    font-size: clamp(4rem, 3.773rem + 0.97vw, 4.5rem);
+  }
+
+  :global(h3){
+    font-size: clamp(0rem, -1.818rem + 7.76vw, 4rem);
+  }
+
+  :global(h4){
+    font-size: clamp(3rem, 2.773rem + 0.97vw, 3.5rem);
+  }
+
+  :global(h5){
+    font-size: clamp(2.5rem, 2.273rem + 0.97vw, 3rem);
+  }
+
+  :global(h6){
+    font-size: clamp(2rem, 1.773rem + 0.97vw, 2.5rem);
+  }
+
   :global(section){
     height: 100vh;
 
