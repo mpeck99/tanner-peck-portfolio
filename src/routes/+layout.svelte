@@ -9,11 +9,19 @@
 	</style>
 </svelte:head>
 
-<header>
+<a class="bypass-link" href="#main">Skip to Content (Press Enter)</a>
+<div
+	role="region"
+	aria-live="polite"
+	class="sr-only"
+	id="site-nav-status"
+	aria-label="Navigation Status"
+/>
+<header aria-label="Site header">
 	<Navigation />
 </header>
-
-<main class="main" id="main">
+<div id="particle-div" />
+<main class="main" id="main" aria-label="Main Content">
 	<slot />
 </main>
 
@@ -31,6 +39,8 @@
 		--clr-white: hsl(0, 33%, 99%);
 
 		--shadow-color: 0deg 0% 0%;
+    --shadow:  0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
+							7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
 	}
 
 	body {
@@ -125,11 +135,11 @@
 
 		z-index: 1;
 
-		box-shadow: 0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
-			7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
+		box-shadow: var(--shadow);
 
 		@include desktop {
 			height: 100vh;
+			width: 10rem;
 
 			display: grid;
 			grid-template-columns: 10rem 1fr;
@@ -144,7 +154,7 @@
 	}
 
 	main {
-		padding: 0 3rem;
+		padding: 0 clamp(1.375rem, 0.636rem + 3.15vw, 3rem);
 
 		grid-row: 2/3;
 		grid-column: 1/2;
@@ -152,6 +162,47 @@
 		@include desktop {
 			grid-row: 1 / 2;
 			grid-column: 2 / 3;
+		}
+	}
+
+	.bypass-link,
+	.bypass-link:visited {
+		width: 18rem;
+
+		display: block;
+
+		position: absolute;
+		left: -1000em;
+
+		padding: 0.25rem;
+
+		background: var(--clr-greyD);
+
+		color: var(--clr-white);
+		font-weight: bold;
+		text-decoration: none;
+
+		overflow: hidden;
+
+		&:hover,
+		&:focus {
+			left: 0;
+			z-index: 5000;
+
+			color: var(--clr-white);
+
+			animation: bypass-slide 0.25s ease-in-out;
+		}
+	}
+
+	@keyframes bypass-slide {
+		0% {
+			height: 0rem;
+			top: -1rem;
+		}
+		100% {
+			height: 3rem;
+			top: 0;
 		}
 	}
 </style>
