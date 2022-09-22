@@ -1,7 +1,7 @@
 ---
 title: Project1
 date: "2021-12-14"
-img: "http://localhost:5173/images/user-placeholder.webp"
+img: "http://localhost:5173/images/article-placeholder.jpg"
 ---
 
 Hello, I am _Project1._

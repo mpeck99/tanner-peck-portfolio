@@ -1,7 +1,6 @@
 <!-- src/routes/[slug]/+page.svelte -->
 <script>
   export let data;
-  console.log(data.img)
 </script>
 
 <article>
@@ -11,8 +10,6 @@
   </div>
 </article>
 
-<style>
-  article {
-
-  }
+<style lange="scss">
+  
 </style>
