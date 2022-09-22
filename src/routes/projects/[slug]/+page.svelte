@@ -1,12 +1,12 @@
 <!-- src/routes/[slug]/+page.svelte -->
 <script>
   export let data;
+  console.log(data.img)
 </script>
 
 <article>
   <div class="inner">
     <h2>{ data.title }</h2>
-    <p>Published: {data.date}</p>
     <svelte:component this={data.content} />
   </div>
 </article>
