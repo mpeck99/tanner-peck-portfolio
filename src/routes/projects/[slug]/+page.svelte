@@ -10,6 +10,6 @@
   </div>
 </article>
 
-<style lange="scss">
+<style lang="scss">
   
 </style>

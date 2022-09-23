@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-auto';
 import  sveltePreprocess from 'svelte-preprocess';
 import { mdsvex } from 'mdsvex';
-import adapter from '@sveltejs/adapter-netlify';
+// import adapter from '@sveltejs/adapter-netlify';
 
 
 /** @type {import('@sveltejs/kit').Config} */

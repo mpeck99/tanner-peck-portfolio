@@ -1,88 +1,116 @@
 <!-- src/routes/projects/+page.svelte -->
 <script>
-  export let data
+	export let data;
 </script>
-  
-  <h1>Projects</h1>
-    
-  <div class="article-wrapper">
-    {#each data.posts as post}
-      <article class="article" style="background-image: url('{post.meta.img}');">
-        <div class="inner">
-          <h2>
-            <a href={post.path}>
-              {post.meta.title}
-            </a>
-          </h2>
-        </div>
-      </article>
-    {/each}
-  </div>
 
-  <style lang="scss">
-    .article-wrapper {
-      display: flex;
-    }
-    .article {
-      height: 30rem;
-      width: 30rem;
+<h1>Projects</h1>
 
-      position: relative;
+<div class="article-wrapper">
+	{#each data.posts as post}
+		<article class="article" style="background-image: url('{post.meta.img}');">
+			<div class="inner">
+				<h2>
+					<a href={post.path}>
+						{post.meta.title}
+					</a>
+				</h2>
+			</div>
+		</article>
+	{/each}
+</div>
 
+<style lang="scss">
+	.article-wrapper {
+		display: flex;
+	}
+	.article {
+		height: 20rem;
+		width: 20rem;
 
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
+		position: relative;
 
-      box-shadow: var(--shadow);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
 
+		box-shadow: var(--shadow);
 
-      .inner {
-        height: 100%;
-        width: 100%;
+    cursor: pointer;
+		&:hover,
+		&:focus {
+			.inner {
+				opacity: 1;
 
-        position: relative;
+				animation: shiftup 1s ease-in-out;
+				transform-origin: bottom right;
+			}
+		}
 
-        &::after {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          
-        }
-      }
+		.inner {
+			height: 100%;
+			width: 100%;
 
-      h2 {
-        height: 100%;
-        width: 100%;
+			opacity: 0;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+			position: relative;
 
-        margin: 0;
+			z-index: 0;
 
-        a {
-          height: 100%;
+			&::after {
+				content: '';
 
-          flex: 1 0 100%;
+				width: 100%;
+				height: 100%;
 
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      }
-    }
+				display: block;
+				opacity: 1;
 
-    @keyframes shiftup {
-      0% {
-        top: 150%;
-        opacity: 1;
-      }
-      100% {
-        top: 10%;
-      }
+				position: absolute;
+				bottom: 0;
+				background-color: var(--clr-gold);
+			}
+		}
 
-    }
-  </style>
+		h2 {
+			height: 100%;
+			width: 100%;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			margin: 0;
+
+			font-size: 2rem;
+
+			a {
+				height: 100%;
+
+				flex: 1 0 100%;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				text-decoration: none;
+
+				z-index: 2;
+
+				&:visited {
+					color: var(--clr-black);
+				}
+			}
+		}
+	}
+
+	@keyframes shiftup {
+		0% {
+			display: block;
+			height: 0%;
+		}
+		100% {
+			height: 100%;
+			opacity: 1;
+		}
+	}
+</style>
