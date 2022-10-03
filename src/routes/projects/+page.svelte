@@ -20,6 +20,11 @@
 </div>
 
 <style lang="scss">
+	h1 {
+		text-align: center;
+		font-size: clamp(4rem, 3.773rem + 0.97vw, 4.5rem);
+	}
+
 	.article-wrapper {
 		display: flex;
 		flex-wrap: wrap;
@@ -37,7 +42,7 @@
 
 		box-shadow: var(--shadow);
 
-    cursor: pointer;
+		cursor: pointer;
 		&:hover,
 		&:focus {
 			.inner {
@@ -65,11 +70,12 @@
 				height: 100%;
 
 				display: block;
-				opacity: 1;
+				opacity: 0.95;
 
 				position: absolute;
 				bottom: 0;
-				background-color: var(--clr-gold);
+
+				background: linear-gradient(-45deg, #a27c02, #2f2d2e);
 			}
 		}
 
@@ -98,7 +104,7 @@
 
 				z-index: 2;
 				color: var(--clr-black);
-				
+
 				&:visited {
 					color: var(--clr-black);
 				}
