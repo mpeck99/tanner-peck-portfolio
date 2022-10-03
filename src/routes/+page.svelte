@@ -96,9 +96,6 @@
 			color: var(--clr-goldD);
 			font-size: clamp(5.625rem, 4.773rem + 3.64vw, 10rem);
 			font-weight: 300;
-
-			text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05),
-				-10px 20px 5px rgba(0, 0, 0, 0.05);
 		}
 	}
 

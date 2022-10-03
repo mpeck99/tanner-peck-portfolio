@@ -22,10 +22,12 @@
 <style lang="scss">
 	.article-wrapper {
 		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
 	}
 	.article {
-		height: 20rem;
-		width: 20rem;
+		height: 25rem;
+		width: 25rem;
 
 		position: relative;
 
@@ -41,7 +43,7 @@
 			.inner {
 				opacity: 1;
 
-				animation: shiftup 1s ease-in-out;
+				animation: shiftup 0.5s ease-in-out;
 				transform-origin: bottom right;
 			}
 		}
@@ -95,7 +97,8 @@
 				text-decoration: none;
 
 				z-index: 2;
-
+				color: var(--clr-black);
+				
 				&:visited {
 					color: var(--clr-black);
 				}

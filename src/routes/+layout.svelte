@@ -78,6 +78,8 @@
 	h6 {
 		font-family: var(--ff-head);
 		color: var(--clr-gold);
+		text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05),
+				-10px 20px 5px rgba(0, 0, 0, 0.05);
 	}
 
 	h2 {
@@ -168,7 +170,7 @@
 	#particle {
 		height: 100%;
 		width: 100%;
-		
+
 		position: fixed;
 	}
 
