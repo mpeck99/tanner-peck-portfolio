@@ -20,7 +20,7 @@
 <header aria-label="Site header">
 	<Navigation />
 </header>
-<div id="particle-div" />
+<div id="particle" />
 <main class="main" id="main" aria-label="Main Content">
 	<slot />
 </main>
@@ -39,8 +39,8 @@
 		--clr-white: hsl(0, 33%, 99%);
 
 		--shadow-color: 0deg 0% 0%;
-    --shadow:  0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
-							7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
+		--shadow: 0.4px 0.3px 0.4px hsl(var(--shadow-color) / 1),
+			7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
 	}
 
 	body {
@@ -163,6 +163,13 @@
 			grid-row: 1 / 2;
 			grid-column: 2 / 3;
 		}
+	}
+
+	#particle {
+		height: 100%;
+		width: 100%;
+		
+		position: fixed;
 	}
 
 	.bypass-link,

@@ -3,7 +3,7 @@
 	export let data;
 </script>
 
-<h1>Projects</h1>
+<h1>My Work</h1>
 
 <div class="article-wrapper">
 	{#each data.posts as post}
