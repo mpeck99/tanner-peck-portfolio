@@ -6,6 +6,7 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 		@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+		@import URL('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 	</style>
 </svelte:head>
 
@@ -22,6 +23,11 @@
 </header>
 <div id="particle" />
 <main class="main" id="main" aria-label="Main Content">
+	<!-- <div class="accessibility-controls">
+		<button type="button">
+			<span class="material-symbols-outlined"> accessibility_new </span>
+		</button>
+	</div> -->
 	<slot />
 </main>
 
@@ -43,6 +49,10 @@
 			7px 6.6px 7.2px -5px hsl(var(--shadow-color) / 0.68);
 	}
 
+	.material-symbols-outlined {
+		font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+	}
+
 	body {
 		min-height: 100vh;
 
@@ -55,7 +65,7 @@
 		position: relative;
 
 		font-family: var(--ff-body);
-		font-size: 22px;
+		font-size: 20px;
 
 		background: var(--clr-black);
 		color: var(--clr-white);
@@ -79,7 +89,7 @@
 		font-family: var(--ff-head);
 		color: var(--clr-gold);
 		text-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1), 10px 20px 5px rgba(0, 0, 0, 0.05),
-				-10px 20px 5px rgba(0, 0, 0, 0.05);
+			-10px 20px 5px rgba(0, 0, 0, 0.05);
 	}
 
 	h2 {
@@ -213,5 +223,20 @@
 			height: 3rem;
 			top: 0;
 		}
+	}
+
+	::-webkit-scrollbar {
+		width: 0.75rem;
+		background: var(--clr-black);
+	}
+
+	::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 2px var(--clr-goldD);
+	}
+
+	::-webkit-scrollbar-thumb {
+		-webkit-box-shadow: inset 0 0 6px var(--clr-goldD);
+
+		background: var(--clr-gold);
 	}
 </style>

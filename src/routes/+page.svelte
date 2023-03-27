@@ -1,10 +1,10 @@
-<svelte:head>
-    <title>Tanner Peck</title>
-</svelte:head>
 <script>
 	// import Projects from '../components/projects.svelte';
-
 </script>
+
+<svelte:head>
+	<title>Tanner Peck</title>
+</svelte:head>
 
 <section id="home" aria-labelledby="home-heading">
 	<div class="inner">
@@ -28,20 +28,20 @@
 		<div class="content">
 			<p>
 				I have a 10 year old son. He has words. He is so good with these words it's unbelievable. We
-				are going to make placeholder text great again. Greater than ever before. The best taco bowls
-				are made in Trump Tower Grill. I love Hispanics! Lorem Ipsum is the single greatest threat. We
-				are not - we are not keeping up with other websites.
+				are going to make placeholder text great again. Greater than ever before. The best taco
+				bowls are made in Trump Tower Grill. I love Hispanics! Lorem Ipsum is the single greatest
+				threat. We are not - we are not keeping up with other websites.
 			</p>
 			<p>
 				I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it
-				was. It could be Russia, but it could also be China. It could also be lots of other people. It
-				also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? I don't think
-				anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could
-				be Russia, but it could also be China. It could also be lots of other people. It also could be
-				some wordsmith sitting on their bed that weights 400 pounds. Ok? We have so many things that
-				we have to do better... and certainly ipsum is one of them. Some people have an ability to
-				write placeholder text... It's an art you're basically born with. You either have it or you
-				don't.
+				was. It could be Russia, but it could also be China. It could also be lots of other people.
+				It also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? I don't
+				think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It
+				could be Russia, but it could also be China. It could also be lots of other people. It also
+				could be some wordsmith sitting on their bed that weights 400 pounds. Ok? We have so many
+				things that we have to do better... and certainly ipsum is one of them. Some people have an
+				ability to write placeholder text... It's an art you're basically born with. You either have
+				it or you don't.
 			</p>
 		</div>
 	</div>
@@ -49,31 +49,9 @@
 <section id="contact" aria-labelledby="contact-heading">
 	<h2 id="contact-heading">Contact</h2>
 	<div class="inner">
-		<p>
-			I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it
-			was. It could be Russia, but it could also be China. It could also be lots of other people. It
-			also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? I’m the best
-			thing that ever happened to placeholder text. Lorem Ipsum is unattractive, both inside and
-			out. I fully understand why it’s former users left it for something else. They made a good
-			decision.
-		</p>
-		<p>
-			I have a 10 year old son. He has words. He is so good with these words it's unbelievable. We
-			are going to make placeholder text great again. Greater than ever before. The best taco bowls
-			are made in Trump Tower Grill. I love Hispanics! Lorem Ipsum is the single greatest threat. We
-			are not - we are not keeping up with other websites.
-		</p>
-		<p>
-			I don't think anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it
-			was. It could be Russia, but it could also be China. It could also be lots of other people. It
-			also could be some wordsmith sitting on their bed that weights 400 pounds. Ok? I don't think
-			anybody knows it was Russia that wrote Lorem Ipsum, but I don't know, maybe it was. It could
-			be Russia, but it could also be China. It could also be lots of other people. It also could be
-			some wordsmith sitting on their bed that weights 400 pounds. Ok? We have so many things that
-			we have to do better... and certainly ipsum is one of them. Some people have an ability to
-			write placeholder text... It's an art you're basically born with. You either have it or you
-			don't.
-		</p>
+		<img src="/images/linkedin.png" alt="LinkedIn" />
+		<span class="material-symbols-outlined"> description </span>
+		<span class="material-symbols-outlined"> alternate_email </span>
 	</div>
 </section>
 
