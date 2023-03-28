@@ -49,9 +49,24 @@
 <section id="contact" aria-labelledby="contact-heading">
 	<h2 id="contact-heading">Contact</h2>
 	<div class="inner">
-		<img src="/images/linkedin.png" alt="LinkedIn" />
-		<span class="material-symbols-outlined"> description </span>
-		<span class="material-symbols-outlined"> alternate_email </span>
+		<div class="callout-wrapper">
+			<div class="callout">
+				<svg xmlns="http://www.w3.org/2000/svg" class="callout-icn" viewBox="0 0 448 512"
+					><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path
+						d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+					/></svg
+				>
+				<a href="#linkedin">LinkedIn link goes here</a>
+			</div>
+			<div class="callout">
+				<span class="material-symbols-outlined callout-icn"> description </span>
+				<a href="#resume">Resume link goes here</a>
+			</div>
+			<div class="callout">
+				<span class="material-symbols-outlined callout-icn"> alternate_email </span>
+				<a href="#email">Email link goes here</a>
+			</div>
+		</div>
 	</div>
 </section>
 
@@ -173,5 +188,116 @@
 		justify-content: center;
 		flex-wrap: wrap;
 		gap: 2rem;
+	}
+
+	.callout-wrapper {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 2rem;
+
+		padding: 4rem 0;
+		margin-bottom: 3rem;
+	}
+
+	.callout {
+		width: 13rem;
+		height: 13rem;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+
+		position: relative;
+
+		background: var(--clr-greyD);
+
+		padding: 3rem;
+
+		z-index: 3;
+
+		.callout-icn {
+			width: 12rem;
+
+			position: absolute;
+
+			opacity: 0.1;
+
+			pointer-events: none;
+
+			font-size: 12rem;
+			fill: var(--clr-white);
+			color: var(--clr-white);
+
+			&.material-symbols-outlined {
+				margin-left: -1rem;
+			}
+		}
+
+		a {
+			font-weight: 700;
+			font-size: 1.75rem;
+
+			z-index: 2;
+		}
+
+		&:after {
+			content: '';
+
+			width: 18.5rem;
+			height: 18.5rem;
+
+			display: none;
+
+			position: absolute;
+
+			z-index: -1;
+
+			transform: rotate(-45deg);
+
+			background-color: var(--clr-goldD);
+		}
+
+		&:hover,
+		&:focus {
+			a {
+				color: var(--clr-greyD);
+
+				&:hover,
+				&:focus {
+					color: var(--clr-white);
+				}
+			}
+			&:after {
+				display: block;
+
+				animation: rotateIn 0.2s ease-in-out;
+			}
+		}
+	}
+
+	#contact {
+		min-height: 50vh;
+	}
+
+	@keyframes rotateIn {
+		0% {
+			transform: rotate(0);
+		}
+		100% {
+			transform: rotate(45deg);
+		}
+	}
+
+	@keyframes rotateOut {
+		0% {
+			transform: rotate(45deg);
+		}
+		100% {
+			transform: rotate(45deg);
+		}
 	}
 </style>
