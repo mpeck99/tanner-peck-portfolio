@@ -1,5 +1,8 @@
 <script>
 	import Navigation from '../components/navigation.svelte';
+
+	const d = new Date();
+	const date = d.getFullYear();
 </script>
 
 <svelte:head>
@@ -29,6 +32,12 @@
 		</button>
 	</div> -->
 	<slot />
+	<footer>
+		<p>
+			@{date}
+			Created by Morgan Peck - <a href="https://morganpeck.com" target="_blank">morganpeck.com</a>
+		</p>
+	</footer>
 </main>
 
 <style lang="scss" global>
@@ -113,8 +122,6 @@
 	}
 
 	section {
-		min-height: 100vh;
-
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -123,8 +130,12 @@
 			margin-top: 0;
 		}
 
+		&:not(#contact) {
+			min-height: 100vh;
+		}
+
 		.inner {
-			padding-right: 2rem;
+			width: calc(100% - 6rem);
 		}
 	}
 
@@ -177,11 +188,40 @@
 		}
 	}
 
-	#particle {
+	footer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		padding: 2rem;
+
+		p {
+			padding: 0;
+			margin: 0;
+
+			font-size: 1rem;
+		}
+	}
+
+	#particle-js {
 		height: 100%;
 		width: 100%;
 
 		position: fixed;
+	}
+
+	a,
+	a:visited {
+		color: var(--clr-gold);
+
+		cursor: pointer;
+
+		text-underline-offset: 0.5rem;
+
+		&:focus,
+		&:hover {
+			color: var(--clr-white);
+		}
 	}
 
 	.bypass-link,

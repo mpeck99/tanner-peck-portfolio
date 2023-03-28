@@ -42,10 +42,7 @@
 		/></svg
 	>
 </a>
-<nav
-	aria-label="Primary"
-	class="site-nav {menu.open === true ? 'js-menu-open' : ''}"
->
+<nav aria-label="Primary" class="site-nav {menu.open === true ? 'js-menu-open' : ''}">
 	<button
 		data-aria-title="hamburger-menu"
 		data-aria-id="site-nav-status"
@@ -380,7 +377,7 @@
 
 			+ .site-nav__menu {
 				width: 8rem;
-				height: 20rem;
+				max-height: 24rem;
 
 				display: flex;
 				flex-direction: column;
@@ -395,7 +392,10 @@
 
 				animation: menuScale 0.5s ease-in-out;
 				transform-origin: top;
+
 				a {
+					padding: 1.5rem 0;
+
 					color: var(--clr-greyD);
 
 					&::before {
