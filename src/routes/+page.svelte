@@ -217,8 +217,6 @@
 
 		padding: 3rem;
 
-		z-index: 3;
-
 		.callout-icn {
 			width: 12rem;
 
@@ -240,8 +238,6 @@
 		a {
 			font-weight: 700;
 			font-size: 1.75rem;
-
-			z-index: 2;
 		}
 
 		&:after {
@@ -263,14 +259,6 @@
 
 		&:hover,
 		&:focus {
-			a {
-				color: var(--clr-greyD);
-
-				&:hover,
-				&:focus {
-					color: var(--clr-white);
-				}
-			}
 			&:after {
 				display: block;
 

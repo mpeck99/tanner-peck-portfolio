@@ -24,7 +24,7 @@
 <header aria-label="Site header">
 	<Navigation />
 </header>
-<div id="particle-js" />
+<div id="particle" />
 <main class="main" id="main" aria-label="Main Content">
 	<!-- <div class="accessibility-controls">
 		<button type="button">
@@ -135,7 +135,11 @@
 		}
 
 		.inner {
-			width: calc(100% - 6rem);
+			width: 100%;
+
+			@include tablet {
+				width: calc(100% - 6rem);
+			}
 		}
 	}
 
@@ -203,7 +207,7 @@
 		}
 	}
 
-	#particle-js {
+	#particle {
 		height: 100%;
 		width: 100%;
 
