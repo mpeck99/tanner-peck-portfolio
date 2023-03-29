@@ -24,7 +24,7 @@
 <header aria-label="Site header">
 	<Navigation />
 </header>
-<div id="particle" />
+<div id="particle-js" />
 <main class="main" id="main" aria-label="Main Content">
 	<!-- <div class="accessibility-controls">
 		<button type="button">
