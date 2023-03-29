@@ -193,10 +193,13 @@
 		justify-content: space-around;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: 2rem;
+		gap: 4rem;
 
 		padding: 4rem 0;
-		margin-bottom: 3rem;
+
+		@include tablet {
+			gap: 2rem;
+		}
 	}
 
 	.callout {
@@ -211,10 +214,11 @@
 
 		position: relative;
 
+		margin: 1rem 0 3rem;
+		padding: 3rem;
+
 		background: var(--clr-greyD);
 		box-shadow: var(--shadow);
-
-		padding: 3rem;
 
 		.callout-icn {
 			width: 12rem;
@@ -242,8 +246,8 @@
 		&:after {
 			content: '';
 
-			width: 14rem;
-			height: 14rem;
+			width: 16rem;
+			height: 16rem;
 
 			display: none;
 
