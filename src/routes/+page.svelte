@@ -202,8 +202,8 @@
 	}
 
 	.callout {
-		width: 13rem;
-		height: 13rem;
+		width: 11rem;
+		height: 11rem;
 
 		display: flex;
 		flex-direction: column;
@@ -243,8 +243,8 @@
 		&:after {
 			content: '';
 
-			width: 18.5rem;
-			height: 18.5rem;
+			width: 14rem;
+			height: 14rem;
 
 			display: none;
 
