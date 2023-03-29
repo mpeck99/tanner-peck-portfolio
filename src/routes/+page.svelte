@@ -81,8 +81,6 @@
 		justify-content: center;
 		align-items: center;
 
-		text-align: center;
-
 		h1 {
 			margin-bottom: 0%;
 
@@ -123,7 +121,7 @@
 		}
 
 		.headshot {
-			margin-left: 2rem;
+			margin-left: clamp(0rem, -0.727rem + 3.64vw, 2rem);
 
 			position: relative;
 
@@ -214,6 +212,7 @@
 		position: relative;
 
 		background: var(--clr-greyD);
+		box-shadow: var(--shadow);
 
 		padding: 3rem;
 
@@ -255,6 +254,7 @@
 			transform: rotate(-45deg);
 
 			background-color: var(--clr-goldD);
+			box-shadow: var(--shadow);
 		}
 
 		&:hover,

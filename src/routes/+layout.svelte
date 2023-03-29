@@ -39,6 +39,7 @@
 		</p>
 	</footer>
 </main>
+<div class="overlay" />
 
 <style lang="scss" global>
 	@import '../static/css/mixins.scss';
@@ -212,6 +213,8 @@
 		width: 100%;
 
 		position: fixed;
+
+		pointer-events: none;
 	}
 
 	a,
